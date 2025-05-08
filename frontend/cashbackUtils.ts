@@ -2,7 +2,7 @@ import { InventoryMessage, TransactionMessage, CashbackReward } from './types';
   
 // tunable thresholds
 const OVERSUPPLY_THRESHOLD = 100;
-const MIN_PURCHASE_COUNT = 5;
+const MIN_PURCHASE_COUNT = 4;
   
 export function calculateCashbackOpportunities(
   inventoryLogs: InventoryMessage[],

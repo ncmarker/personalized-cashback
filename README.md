@@ -112,6 +112,22 @@ docker-compose down
 
 ---
 
+### Configuration
+
+You can customize how often cashback rewards appear by modifying the criteria used to generate them. In the file: `frontend/cashbackUtils.ts` you’ll find two tunable thresholds:
+
+```ts
+const OVERSUPPLY_THRESHOLD = 100;
+const MIN_PURCHASE_COUNT = 4;
+```
+
+`OVERSUPPLY_THRESHOLD`: Determines the inventory quantity required to consider an item oversupplied.
+`MIN_PURCHASE_COUNT`: The minimum number of purchases for a user in a specific category to qualify for a reward.
+
+Lowering these values will result in more frequent cashback rewards being generated, while increasing them will make rewards rarer.
+
+---
+
 ## 💬 Troubleshooting
 
 - **Docker not found**: Make sure Docker Desktop is installed and running.

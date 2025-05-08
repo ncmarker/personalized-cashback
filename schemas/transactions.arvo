@@ -1,0 +1,73 @@
+{
+  "namespace": "ksql",
+  "name": "transaction",
+  "type": "record",
+  "fields": [
+    {
+      "name": "userId",
+      "type": {
+        "type": "int",
+        "arg.properties": {
+          "range": {
+            "min": 1,
+            "max": 100
+          }
+        }
+      }
+    },
+    {
+      "name": "storeId",
+      "type": {
+        "type": "int",
+        "arg.properties": {
+          "range": {
+            "min": 1,
+            "max": 10
+          }
+        }
+      }
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "item",
+          "fields": [
+            {
+              "name": "itemId",
+              "type": {
+                "type": "int",
+                "arg.properties": {
+                  "range": {
+                    "min": 1000,
+                    "max": 2000
+                  }
+                }
+              }
+            },
+            {
+              "name": "quantity",
+              "type": {
+                "type": "int",
+                "arg.properties": {
+                  "range": {
+                    "min": 1,
+                    "max": 5
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "arg.properties": {
+          "length": {
+            "min": 1,
+            "max": 10
+          }
+        }
+      }
+    }
+  ]
+}

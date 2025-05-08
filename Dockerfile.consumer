@@ -1,0 +1,28 @@
+# Use an official Node.js image
+FROM node:18
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY backend/package*.json ./
+
+# Install dependencies
+RUN npm install -g ts-node && npm install
+
+# Copy the rest of the application code
+COPY backend /app/backend
+
+# Set environment variable for Kafka broker
+ENV KAFKA_BROKER=kafka:9092
+
+# Expose the necessary ports
+EXPOSE 8080
+EXPOSE 9092
+EXPOSE 9005
+
+# Command to run the consumer
+RUN npm install -g pm2
+CMD ["pm2-runtime", "start", "node --loader ts-node/esm /app/backend/kafkaConsumer.ts", "node --loader ts-node/esm /app/backend/websocketServer.ts"]
+
+

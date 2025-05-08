@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "module": "ESNext",             // Use ES module syntax
+      "target": "ESNext",             // Target modern JavaScript
+      "moduleResolution": "node",     // Use Node.js module resolution
+      "esModuleInterop": true,        // Ensures interop for CommonJS and ESModules
+      "skipLibCheck": true,           // Skip type checking of declaration files
+      "strict": true,                 // Enable strict type-checking
+      "outDir": "./dist",             // Output directory for compiled JS files
+      "resolveJsonModule": true       // Allow importing JSON modules
+    },
+    "include": [
+      "*.ts"            
+    ],
+    "exclude": [
+      "node_modules"                 
+    ]
+}
+  

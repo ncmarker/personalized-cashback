@@ -25,9 +25,11 @@ Make sure you have the following installed:
 ```
 personalized-cashback/
 │
-├── backend/              # Python backend, containerized with Docker
+├── backend/              # typescript backend, containerized with Docker
 │
 ├── frontend/             # React Native app using Expo
+│
+├── schemas/              # Format for generated data 
 │
 ├── docker-compose.yml    # Spins up backend services
 │
@@ -59,7 +61,7 @@ In the root directory of the project:
 docker-compose up -d
 ```
 
-This starts the backend services in detached mode. The backend may take ~60 seconds to fully initialize.
+This starts the backend services in detached mode. The backend will take ~60 seconds to fully initialize.
 
 ---
 
